@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import ComponentList from "../packages/list.json";
+import ComponentList from "packages/list.json";
 import { reactive } from "vue";
 
 const data = reactive({

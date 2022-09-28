@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --config ./build/base.config.ts",
+    "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && node script/copyDir.js",
+    "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "gen": "node ./script/genNewComp/index.js"
@@ -16,10 +18,15 @@
   },
   "devDependencies": {
     "@rollup/pluginutils": "^4.2.1",
+    "@types/node": "^18.7.23",
     "@vitejs/plugin-vue": "^3.1.0",
+    "fs-extra": "10.0.0",
+    "handlebars": "4.7.7",
     "happy-dom": "^6.0.4",
+    "inquirer": "8.2.0",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.5.0",
     "vite-plugin-md": "^0.20.4",
     "vue-tsc": "^0.40.4"
   }
